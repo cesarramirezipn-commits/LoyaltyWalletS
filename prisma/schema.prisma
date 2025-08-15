@@ -1,0 +1,30 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "sqlite"; url = env("DATABASE_URL") }
+
+model User {
+  id    String  @id @default(cuid())
+  email String  @unique
+  password String
+  createdAt DateTime @default(now())
+  programs Program[]
+}
+model Program {
+  id     String @id @default(cuid())
+  ownerId String
+  name   String
+  slug   String @unique
+  terms  String  @default("")
+  primaryColor String @default("#111111")
+  backgroundColor String @default("#f6f6f7")
+  createdAt DateTime @default(now())
+  customers Customer[]
+}
+model Customer {
+  id String @id @default(cuid())
+  programId String
+  name String
+  email String
+  phone String
+  stamps Int @default(0)
+  createdAt DateTime @default(now())
+}
