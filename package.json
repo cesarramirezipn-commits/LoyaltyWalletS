@@ -18,7 +18,8 @@
     "react-dom": "18.3.1",
     "stripe": "^16.6.0",
     "zod": "^3.23.8",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "passkit-generator": "1.9.7"
   },
   "devDependencies": {
     "prisma": "5.16.2",
@@ -30,4 +31,3 @@
     "@types/jsonwebtoken": "^9.0.5"
   }
 }
-
